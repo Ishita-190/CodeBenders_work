@@ -1,4 +1,7 @@
 import { InterviewCard } from "@/components/interview-card"
+import { Navigation } from "@/components/navigation"
+import { Footer } from "@/components/footer"
+import { BackToTop } from "@/components/back-to-top"
 
 const interviewExperiences = [
   {
@@ -116,41 +119,8 @@ const interviewExperiences = [
 export default function BlogsPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#1a1d2e] via-[#1a1d2e] to-[#0f1117]">
-      {/* Header */}
-      <header className="border-b border-cyan-500/20 bg-[#1a1d2e]/80 backdrop-blur-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <div className="flex items-center justify-between">
-            <h1 className="text-2xl font-bold">
-              <span className="text-white">CODE</span>
-              <span className="text-cyan-400">BENDERS</span>
-            </h1>
-            <nav className="hidden md:flex items-center gap-6 text-sm">
-              <a href="/" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Home
-              </a>
-              <a href="/about" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                About
-              </a>
-              <a href="/team" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Team
-              </a>
-              <a href="/events" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Events
-              </a>
-              <a href="/resources" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Resources & Opportunities
-              </a>
-              <a href="/blogs" className="text-cyan-400 font-medium">
-                Blogs
-              </a>
-              <a href="/contact" className="text-gray-300 hover:text-cyan-400 transition-colors">
-                Contact
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+      <Navigation />
+      
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
@@ -176,12 +146,8 @@ export default function BlogsPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-cyan-500/20 bg-[#0f1117] py-8">
-        <div className="container mx-auto px-4 text-center text-gray-400 text-sm">
-          <p>© 2025 Codebenders. All rights reserved.</p>
-        </div>
-      </footer>
+    <Footer />
+    <BacktoTop />
     </div>
   )
 }
