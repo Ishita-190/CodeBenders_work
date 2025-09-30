@@ -127,8 +127,8 @@ export default function BlogsPage() {
           <h2 className="text-4xl md:text-5xl font-bold text-foreground neon-glow"
             style={{ fontFamily: "var(--font-orbitron)" }}
             >
-            <span>Interview</span>
-            <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent neon-glow"
+            <span>Interview </span>
+            <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-foreground neon-glow"
                 style={{ fontFamily: "var(--font-orbitron)" }}
               >
               Experiences
