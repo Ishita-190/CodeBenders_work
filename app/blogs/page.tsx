@@ -147,7 +147,7 @@ export default function BlogsPage() {
       </section>
 
     <Footer />
-    <BacktoTop />
+    <BackToTop />
     </div>
   )
 }
