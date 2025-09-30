@@ -128,7 +128,7 @@ export default function BlogsPage() {
             style={{ fontFamily: "var(--font-orbitron)" }}
             >
             <span>Interview </span>
-            <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent neon-glow"
+            <span className="text-cyan-400 neon-glow"
                 style={{ fontFamily: "var(--font-orbitron)" }}
               >
               Experiences
