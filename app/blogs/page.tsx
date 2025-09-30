@@ -124,9 +124,13 @@ export default function BlogsPage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-16 md:py-24">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6 text-balance">
-            <span className="text-white">Interview </span>
-            <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent">
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground neon-glow"
+            style={{ fontFamily: "var(--font-orbitron)" }}
+            >
+            <span>Interview</span>
+            <span className="bg-gradient-to-r from-cyan-400 to-pink-500 bg-clip-text text-transparent neon-glow"
+                style={{ fontFamily: "var(--font-orbitron)" }}
+              >
               Experiences
             </span>
           </h2>
