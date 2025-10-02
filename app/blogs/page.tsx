@@ -3,7 +3,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { BackToTop } from "@/components/back-to-top"
 
-const interviewExperiences = [
+export const interviewExperiences = [
   {
     id: 1,
     authorName: "Paul Thomas Anderson",

@@ -1,6 +1,9 @@
+"use client"
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Building2, Calendar, CheckCircle2, Lightbulb, BookOpen, RefreshCw } from "lucide-react"
+import { Building2, Calendar, CheckCircle2, Lightbulb, BookOpen, RefreshCw, ArrowRight } from "lucide-react"
+import Link from "next/link"
 
 interface InterviewExperience {
   id: number
@@ -40,80 +43,42 @@ export function InterviewCard({ experience }: InterviewCardProps) {
   }
 
   return (
-    <Card className="bg-[#1e2235]/50 border-cyan-500/20 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10">
-      <CardHeader className="space-y-4">
-        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
-          <div className="space-y-2">
-            <div className="flex items-center gap-2 flex-wrap">
-              <h3 className="text-2xl font-bold text-white">{experience.authorName}</h3>
-              <Badge className={getOutcomeColor(experience.outcome)}>{experience.outcome}</Badge>
+    <Link href={`/blogs/${experience.id}`} className="block hover:no-underline">
+      <Card className="bg-[#1e2235]/50 border-cyan-500/20 backdrop-blur-sm hover:border-cyan-500/40 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 h-full">
+        <CardHeader className="space-y-4">
+          <div className="flex flex-col h-full">
+            <div className="flex-1 space-y-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <h3 className="text-2xl font-bold text-white">{experience.authorName}</h3>
+                    <Badge className={getOutcomeColor(experience.outcome)}>{experience.outcome}</Badge>
+                  </div>
+                  <p className="text-gray-400 text-lg">{experience.role} at {experience.company}</p>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  <Badge className={getOpportunityColor(experience.opportunityType)}>{experience.opportunityType}</Badge>
+                  <Badge variant="outline" className="text-gray-400 border-gray-600">
+                    <Calendar className="mr-1 size-3" />
+                    {experience.date}
+                  </Badge>
+                </div>
+              </div>
+
+              {/* Preview Content */}
+              <div className="space-y-4">
+                <p className="text-gray-300 line-clamp-3">
+                  {experience.interviewExperience}
+                </p>
+                <div className="flex items-center text-cyan-400 hover:text-cyan-300 transition-colors">
+                  <span className="font-medium">Read full experience</span>
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </div>
+              </div>
             </div>
-            <p className="text-gray-400 text-lg">{experience.role}</p>
-            <p className="text-sm text-gray-500">{experience.company}</p>
           </div>
-          <div className="flex flex-wrap gap-2">
-            <Badge className={getOpportunityColor(experience.opportunityType)}>{experience.opportunityType}</Badge>
-            <Badge variant="outline" className="text-gray-400 border-gray-600">
-              <Calendar className="mr-1 size-3" />
-              {experience.date}
-            </Badge>
-          </div>
-        </div>
-      </CardHeader>
-
-      <CardContent className="space-y-6">
-        {/* Application Process */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-cyan-400 font-semibold">
-            <Building2 className="size-5" />
-            <h4>Application Process</h4>
-          </div>
-          <p className="text-gray-300 leading-relaxed pl-7">{experience.applicationProcess}</p>
-        </div>
-
-        {/* Interview Experience */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-pink-400 font-semibold">
-            <CheckCircle2 className="size-5" />
-            <h4>Interview Experience</h4>
-          </div>
-          <p className="text-gray-300 leading-relaxed pl-7">{experience.interviewExperience}</p>
-        </div>
-
-        {/* Resources Used */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-cyan-400 font-semibold">
-            <BookOpen className="size-5" />
-            <h4>Resources Used</h4>
-          </div>
-          <ul className="space-y-1 pl-7">
-            {experience.resources.map((resource, index) => (
-              <li key={index} className="text-gray-300 flex items-start gap-2">
-                <span className="text-cyan-400 mt-1">•</span>
-                <span>{resource}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        {/* Things Differently */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-pink-400 font-semibold">
-            <RefreshCw className="size-5" />
-            <h4>What I'd Do Differently</h4>
-          </div>
-          <p className="text-gray-300 leading-relaxed pl-7">{experience.thingsDifferently}</p>
-        </div>
-
-        {/* Tips */}
-        <div className="space-y-2 bg-cyan-500/5 border border-cyan-500/20 rounded-lg p-4">
-          <div className="flex items-center gap-2 text-cyan-400 font-semibold">
-            <Lightbulb className="size-5" />
-            <h4>Pro Tips</h4>
-          </div>
-          <p className="text-gray-300 leading-relaxed pl-7">{experience.tips}</p>
-        </div>
-      </CardContent>
-    </Card>
+        </CardHeader>
+      </Card>
+    </Link>
   )
 }
